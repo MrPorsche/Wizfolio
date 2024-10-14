@@ -11,12 +11,17 @@ export default function Hat(props) {
   const modelRef = useRef();
 
   useFrame(() => {
-    modelRef
+    modelRef.current.rotation.y += 0.010
   })
 
   return (
-    <group {...props} dispose={null}
-        ref={modelRef}
+    <group
+      {...props}
+      dispose={null}
+      ref={modelRef}
+      position={[0, 0, 0]}
+      rotation={[0.4, -1, 0]}
+      scale={[1.8, 1.8, 1.8]}
     >
       <mesh
         castShadow
